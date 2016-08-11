@@ -130,28 +130,28 @@ $(document).ready(function(){
 
     $("form").submit(function(event){
       event.preventDefault();
-      $.ajax({
-        type: "post",
-        url: "https://galvanize-eats-api.herokuapp.com/orders",
-        data: {
-          cart: cart,
-          Name: $("#name").val(),
-          Phone: $("#phone").val(),
-          Address: $("#address").val()
-        },
-        success: console.log("Success!")
-      })
+      // $.ajax({
+      //   type: "post",
+      //   url: "https://galvanize-eats-api.herokuapp.com/orders",
+      //   data: {
+      //     cart: cart,
+      //     Name: $("#name").val(),
+      //     Phone: $("#phone").val(),
+      //     Address: $("#address").val()
+      //   },
+      //   success: console.log("Success!")
+      // })
 
       // How to post with $.post?
 
-      // $.post("https://galvanize-eats-api.herokuapp.com/orders")
-      // .then(function(cart){
-      //   console.log(cart);
-      //   console.log("Success!")
-      // })
-      // .catch(function(err){
-      //   throw err;
-      // })
+      $.post("https://galvanize-eats-api.herokuapp.com/orders", { cart: cart, Name: $("#name").val(), Phone: $("#phone").val(), Address: $("#address").val()})
+      .then(function(data){
+        console.log(data);
+        console.log("Success!")
+      })
+      .catch(function(err){
+        throw err;
+      })
     })
   });
 
