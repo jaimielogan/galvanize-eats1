@@ -126,7 +126,33 @@ $(document).ready(function(){
       var idName = ("#" + name).replace(" ","");
       var input = $(idName).val();
       validate(input,idName,data,name,cart);
-    });
+    })
+
+    $("form").submit(function(event){
+      event.preventDefault();
+      $.ajax({
+        type: "post",
+        url: "https://galvanize-eats-api.herokuapp.com/orders",
+        data: {
+          cart: cart,
+          Name: $("#name").val(),
+          Phone: $("#phone").val(),
+          Address: $("#address").val()
+        },
+        success: console.log("Success!")
+      })
+
+      // How to post with $.post?
+
+      // $.post("https://galvanize-eats-api.herokuapp.com/orders")
+      // .then(function(cart){
+      //   console.log(cart);
+      //   console.log("Success!")
+      // })
+      // .catch(function(err){
+      //   throw err;
+      // })
+    })
   });
 
   // Highlight Menu items on click
