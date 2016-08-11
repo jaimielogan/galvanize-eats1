@@ -9,29 +9,56 @@ var tax = 0;
 function displayMenu(data){
   // Displays Menu items and prices on page
   for (var i in data.menu){
+    // Pizzas
+    if(data.menu[i].type === "pizza"){
     // Display in Table
-    $(".menuBody").append (
-      // Each Table Row must have a class "clickable-row" added to enable the clicking and highlighting functionality
-      // Name
-      $("<tr>", {"class": "clickable-row"})
-      .append (
-        $("<td>", {text:data.menu[i].name, val:data.menu[i].name})
-      )
-      // Price
-      .append (
-        $("<td>", {text:data.menu[i].price, val:data.menu[i].price})
-      )
-      // Quantity text input
-      .append (
-        $("<td>"). append (
-          $("<input>", {"type": "text-area", "class": "amount", "id": (data.menu[i].name).replace(" ",""), "val": 1, "min": 1, "max": 99})
+      $(".pizzaBody").append (
+        // Each Table Row must have a class "clickable-row" added to enable the clicking and highlighting functionality
+        // Name
+        $("<tr>", {"class": "clickable-row"})
+        .append (
+          $("<td>", {text:data.menu[i].name, val:data.menu[i].name})
+        )
+        // Price
+        .append (
+          $("<td>", {text:data.menu[i].price, val:data.menu[i].price})
+        )
+        // Quantity text input
+        .append (
+          $("<td>"). append (
+            $("<input>", {"type": "text-area", "class": "amount", "id": (data.menu[i].name).replace(" ",""), "val": 1, "min": 1, "max": 99})
+          )
+        )
+        // Add Item Button
+        .append (
+          $("<a>", {"class":"btn btn-success addItem actionButton", text: "Add to Cart", val: data.menu[i].name} )
         )
       )
-      // Add Item Button
-      .append (
-        $("<a>", {"class":"btn btn-success addItem actionButton", text: "Add to Cart", val: data.menu[i].name} )
+    }
+    else {
+      $(".burgerBody").append (
+        // Each Table Row must have a class "clickable-row" added to enable the clicking and highlighting functionality
+        // Name
+        $("<tr>", {"class": "clickable-row"})
+        .append (
+          $("<td>", {text:data.menu[i].name, val:data.menu[i].name})
+        )
+        // Price
+        .append (
+          $("<td>", {text:data.menu[i].price, val:data.menu[i].price})
+        )
+        // Quantity text input
+        .append (
+          $("<td>"). append (
+            $("<input>", {"type": "text-area", "class": "amount", "id": (data.menu[i].name).replace(" ",""), "val": 1, "min": 1, "max": 99})
+          )
+        )
+        // Add Item Button
+        .append (
+          $("<a>", {"class":"btn btn-success addItem actionButton", text: "Add to Cart", val: data.menu[i].name} )
+        )
       )
-    )
+    }
     // Highlight First Menu Item
     $(".clickable-row:first").addClass('success');
   }
