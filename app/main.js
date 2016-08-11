@@ -13,7 +13,8 @@ function displayMenu(data){
     $(".menuBody").append (
       // Each Table Row must have a class "clickable-row" added to enable the clicking and highlighting functionality
       // Name
-      $("<tr>", {"class": "clickable-row"}).append (
+      $("<tr>", {"class": "clickable-row"})
+      .append (
         $("<td>", {text:data.menu[i].name, val:data.menu[i].name})
       )
       // Price
@@ -23,7 +24,7 @@ function displayMenu(data){
       // Quantity text input
       .append (
         $("<td>"). append (
-          $("<input>", {"type": "text-area", "class": "amount", "id": (data.menu[i].name).replace(" ",""), "val": 1})
+          $("<input>", {"type": "text-area", "class": "amount", "id": (data.menu[i].name).replace(" ",""), "val": 1, "min": 1, "max": 99})
         )
       )
       // Add Item Button
@@ -52,9 +53,14 @@ function addItem(data,name,input){
 }
 
 // Validate Quantity Input
-function validate(data,name,input){
+function validate(input,idName,data,name,cart){
   if(input < 1 || input > 99){
-    console.log("error")
+    $(idName).val("Please enter a value between 1 and 99");
+  }
+  else{
+    addItem(data,name,input);
+    addTotal(cart);
+    displayCart(cart,total);
   }
 }
 
@@ -73,7 +79,7 @@ function displayCart(cart,total){
 
   var output = "";
   for (var i in cart){
-    output += "<li>"+ cart[i].name + " x " + cart[i].count + "( " + cart[i].price + " each) = " + (cart[i].price * cart[i].count) +"</li>"
+    output += "<li>"+ cart[i].name + " x " + cart[i].count + " (" + cart[i].price + " each) = " + (cart[i].price * cart[i].count) +"</li>"
   }
   $(".cart").html(output);
   $(".subtotal").text("Subtotal = " + subtotal);
@@ -86,16 +92,13 @@ $(document).ready(function(){
   $.get(url)
   .then(function(data){
     displayMenu(data);
+    console.log(data);
     // Add item to order when the plus button is clicked
     $(document).on("click", ".addItem", function(){
       var name = $(this).val();
       var idName = ("#" + name).replace(" ","");
       var input = $(idName).val();
-      validate(data,name,input);
-      addItem(data,name,input);
-      addTotal(cart);
-      console.log(cart);
-      displayCart(cart,total);
+      validate(input,idName,data,name,cart);
     });
   });
 
@@ -103,6 +106,5 @@ $(document).ready(function(){
   $('.table').on('click', '.clickable-row', function(event) {
     $(this).addClass('success').siblings().removeClass('success');
   });
-
 
 });

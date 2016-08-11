@@ -1,17 +1,45 @@
 body {
   display:flex;
   flex-direction: column;
+  background-image: url(https://hd.unsplash.com/photo-1453831210728-695502f9f795);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: 'Open Sans', sans-serif;
 }
+
 
 .navbar {
   background-color: #FCFCFC;
   opacity: 0.9;
 }
 
+.table,
+.form-horizontal {
+  background-color: white;
+  margin: 0 0 5% 5%;
+  padding: 2% 15% 2% 15%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
 .table {
-  width: 50%;
   float: left;
+  width: 42.5%;
+  height: 50px;
+}
+
+.form-horizontal{
+  background-color:white;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.cart-card {
+  background-color:white;
+  width: 42.5%;
+  float: right;
+  margin-right: 5%;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .addItem {
@@ -19,8 +47,18 @@ body {
   height: 120%;
 }
 
-.amount {
-  width: 30px;
+.totals,
+ .cart {
+  list-style-type: none;
+}
+
+.cart li,
+.totals li {
+  font-size: 1vw;
+}
+
+.totals li {
+  margin-left: 75%;
 }
 
 .panel-footer {
