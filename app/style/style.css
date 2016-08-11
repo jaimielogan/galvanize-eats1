@@ -1,0 +1,58 @@
+body {
+  display:flex;
+  flex-direction: column;
+  background-image: url("../../media/burger.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  background-color: #FCFCFC;
+  opacity: 0.9;
+}
+
+.tagline,
+.panel-footer,
+.btn-default {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagline {
+  font-size: 5vw;
+  margin-top: 5%;
+}
+
+.btn-default {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5vw 40vw 0 40vw;
+  background-color: #FCFCFC;
+  opacity: 0.9;
+}
+
+.container {
+  margin-top: 8%;
+  margin-bottom: 10px;
+  background-color: #FCFCFC;
+  opacity: 0.9;
+  /*width: 100%;*/
+}
+
+div p {
+  text-align: justify;
+}
+
+.panel-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #FCFCFC;
+  opacity: 0.9;
+}

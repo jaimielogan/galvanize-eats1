@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Orders</title>
+    <!-- Javascript Links -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="../main.js"></script>
+    <!-- Style Links -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-awusxf8AUojygHf2+joICySzB780jVvQaVCAt1clU3QsyAitLGul28Qxb2r1e5g+" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style_orders.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Galvanize Eats</a>
+        </div>
 
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="orders.html">Cart/Order Here</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of Nav Bar -->
+
+    <!-- Menu -->
+      <div class="menu-div">
+        <h4>Menu</h4>
+        <ul class="menu">
+
+        </ul>
+      </div>
+
+      <table class="table table-striped table-hover ">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody class = "menuBody rowlink">
+        </tbody>
+      </table>
+      <!-- End of Menu -->
+
+      <!-- Cart -->
+      <div>
+        <h4>Cart</h4>
+        <ul class = "cart">
+        </ul>
+        <ul class = "totals">
+          <li class = "subtotal">Subtotal = $0.00</li>
+          <li class = "tax">Tax (8.3%) = $0.00</li>
+          <li class = "total">Total = $0.00</li>
+        </ul>
+      </div>
+      <!-- End of Cart -->
+
+      <!-- Customer Information -->
+      <form class="form-horizontal">
+        <fieldset>
+          <legend>Customer Information</legend>
+          <div class="form-group">
+            <label for="name" class="col-lg-2 control-label">Name</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="name" placeholder="Jane Smith">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone" class="col-lg-2 control-label">Phone Number</label>
+            <div class="col-lg-10">
+              <input type="tel" class="form-control" id="phone" placeholder="(555)555-5555">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="address" class="col-lg-2 control-label">Address</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="address" placeholder="123 N. Main Street Denver, CO 80216">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="reset" class="btn btn-default">Cancel</button>
+              <button type="submit" class="btn btn-primary">Place Order</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <!-- End of Customer Information -->
+
+    <!-- Footer -->
+    <div class="panel panel-default">
+      <div class="panel-footer">
+        <span class = "footer-content">
+          &copy; Galvanize, 2016 <i class="fa fa-map-marker" aria-hidden="true"></i> Denver, CO
+        </span>
+      </div>
+    </div>
+    <!-- End of Footer -->
+
+  </body>
+</html>

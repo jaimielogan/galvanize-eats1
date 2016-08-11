@@ -1,0 +1,36 @@
+body {
+  display:flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  background-color: #FCFCFC;
+  opacity: 0.9;
+}
+
+.table {
+  width: 50%;
+  float: left;
+}
+
+.addItem {
+  width: 100%;
+  height: 120%;
+}
+
+.amount {
+  width: 30px;
+}
+
+.panel-footer {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #FCFCFC;
+  opacity: 0.9;
+}
