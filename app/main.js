@@ -33,7 +33,7 @@ function displayMenu(data){
         .append (
           $("<a>", {"class":"btn btn-success addItem actionButton", text: "Add to Cart", val: data.menu[i].name} )
         )
-      )
+      );
     }
     else {
       $(".burgerBody").append (
@@ -57,7 +57,7 @@ function displayMenu(data){
         .append (
           $("<a>", {"class":"btn btn-success addItem actionButton", text: "Add to Cart", val: data.menu[i].name} )
         )
-      )
+      );
     }
     // Highlight First Menu Item
     $(".clickable-row:first").addClass('success');
@@ -73,7 +73,7 @@ function addItem(data,name,input){
   }
   for (var j in data.menu){
     if(name === data.menu[j].name){
-      cart.push({name: data.menu[j].name, price: data.menu[j].price, count: Number(input)})
+      cart.push({name: data.menu[j].name, price: data.menu[j].price, count: Number(input)});
     }
   }
   displayCart();
@@ -106,7 +106,7 @@ function displayCart(cart,total){
 
   var output = "";
   for (var i in cart){
-    output += "<li>"+ cart[i].name + " x " + cart[i].count + " (" + cart[i].price + " each) = " + (cart[i].price * cart[i].count) +"</li>"
+    output += "<li>"+ cart[i].name + " x " + cart[i].count + " (" + cart[i].price + " each) = " + (cart[i].price * cart[i].count) +"</li>";
   }
   $(".cart").html(output);
   $(".subtotal").text("Subtotal = " + subtotal);
@@ -126,7 +126,7 @@ $(document).ready(function(){
       var idName = ("#" + name).replace(" ","");
       var input = $(idName).val();
       validate(input,idName,data,name,cart);
-    })
+    });
 
     $("form").submit(function(event){
       event.preventDefault();
@@ -147,12 +147,12 @@ $(document).ready(function(){
       $.post("https://galvanize-eats-api.herokuapp.com/orders", { cart: cart, Name: $("#name").val(), Phone: $("#phone").val(), Address: $("#address").val()})
       .then(function(data){
         console.log(data);
-        console.log("Success!")
+        console.log("Success!");
       })
       .catch(function(err){
         throw err;
-      })
-    })
+      });
+    });
   });
 
   // Highlight Menu items on click

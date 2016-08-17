@@ -1,7 +1,7 @@
 body {
   display:flex;
   flex-direction: column;
-  background-image: url("../../media/burger.jpeg");
+  background-image: url("../burger.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;

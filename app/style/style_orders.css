@@ -17,36 +17,55 @@ body {
 .form-horizontal {
   background-color: white;
   margin: 0 0 5% 5%;
-  padding: 2% 15% 2% 15%;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .table {
   float: left;
-  width: 42.5%;
+  width: 42%;
   height: 150px;
   overflow: scroll;
+  table-layout: fixed;
+  white-space: nowrap;
 }
 
-.form-horizontal{
-  background-color:white;
-  margin-right: 5%;
-  margin-bottom: 5%;
+.col1 {
+  width: 25%;
 }
 
-.cart-card {
-  background-color:white;
-  width: 42.5%;
-  height: 45%;
-  overflow: scroll;
-  float: right;
-  margin-right: 5%;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.col2 {
+  width: 15%;
+}
+
+.col3 {
+  width: 25%;
+}
+
+.col4 {
+  width: 20%;
+}
+
+.amount {
+  width: 50%;
 }
 
 .addItem {
   width: 100%;
   height: 120%;
+}
+
+.cart_title {
+  border-bottom: 1px solid lightgrey;
+}
+
+.cart-card {
+  background-color:white;
+  width: 42.5%;
+  min-height: 350px;
+  overflow: scroll;
+  float: right;
+  margin: 0 5% 5px 0;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
 .totals,
@@ -56,15 +75,36 @@ body {
 
 .cart li,
 .totals li {
-  font-size: 1vw;
+  font-size: 2vmin;
 }
 
-.totals li {
-  margin-left: 75%;
+.cart {
+  position: relative;
 }
 
-.totals li:last-child{
+.totals li:last-child {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
   font-weight: bold;
+}
+
+.totals li:nth-child(2){
+  position: absolute;
+  bottom: 30px;
+  right: 10px;
+}
+
+.totals li:first-child{
+  position: absolute;
+  bottom: 55px;
+  right: 10px;
+}
+
+.form-horizontal{
+  background-color:white;
+  margin-right: 5%;
+  margin-bottom: 5%;
 }
 
 .panel-footer {
